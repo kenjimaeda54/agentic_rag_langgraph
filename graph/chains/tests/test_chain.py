@@ -1,3 +1,6 @@
+from sympy import pprint
+
+from graph.chains.generation import generation_chain
 from graph.chains.retrieval_grader import GradeDocuments, retrieval_grader
 from ingestion import retriever
 
@@ -25,3 +28,9 @@ def test_retriever_document_no():
 
      assert binary_code.binary_score == "no"
 
+
+def test_generation_prompt():
+     question = "agent memory"
+     docs = retriever.invoke(question)
+     generation = generation_chain.invoke({"context": docs, "question": question})
+     pprint(generation)
