@@ -1,6 +1,7 @@
 import os
 
 from dotenv import load_dotenv
+from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openrouter import ChatOpenRouter
 from pydantic import SecretStr
@@ -27,5 +28,5 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-generation_chain = prompt | llm
+generation_chain = prompt | llm | StrOutputParser()
 

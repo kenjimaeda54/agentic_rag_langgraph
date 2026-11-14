@@ -1,6 +1,7 @@
 from graph.nodes.grade_documents import  grade_documents
 from graph.nodes.web_search import web_search
-from graph.nodes.retrieve import retriever
+from graph.nodes.retrieve import retrieve
+from graph.nodes.generate import generate
 
 
-__all__ = ["grade_documents", "web_search", "retriever"]
+__all__ = ["grade_documents", "web_search", "retrieve", "generate"]
